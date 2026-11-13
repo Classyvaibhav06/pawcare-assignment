@@ -1,0 +1,234 @@
+{
+  "idea": "most students use ChatGPT like Google search. show them 5 ways to use AI like a junior teammate instead, so they actually build projects for their portfolio",
+  "model": "ag/gemini-3-flash",
+  "brand": {
+    "handle": "@appliedailab",
+    "mark": "ai/",
+    "audience": "Indian college students & young professionals (18-28)",
+    "voice": "direct, practical, slightly witty, founder-to-student, zero hype",
+    "cta": "Apply for Cohort 01 — link in bio"
+  },
+  "research": {
+    "audience_pain": "Using ChatGPT only for basic Q&A or copying assignment answers, leading to zero practical skills and empty portfolios that fail to impress recruiters.",
+    "angle": "Shift your mindset from using AI as a search engine to managing it like a junior teammate to build real portfolio projects.",
+    "key_points": [
+      "Stop asking 'What is X?' and start saying 'Act as my technical co-founder, let's scope a project.'",
+      "Use AI for architectural brainstorming: Ask it to break down a monolithic app idea into microservices.",
+      "Pair programming buddy: Paste your broken code and ask it to review it like a strict senior developer, not just rewrite it.",
+      "Edge-case testing: Have AI try to break your code by generating malicious inputs and stress tests.",
+      "Documentation and README generator: Turn your messy Jupyter notebook or GitHub repo into professional project docs.",
+      "Mock interview drill: Feed your project description to ChatGPT and have it grill you on system design choices."
+    ],
+    "facts": [
+      {
+        "claim": "Recruiters heavily favor candidates with demonstrable portfolio projects over those with just theoretical degrees.",
+        "needs_citation": false
+      },
+      {
+        "claim": "Generative AI tools are widely adopted by software developers for coding assistance and debugging.",
+        "needs_citation": false
+      }
+    ],
+    "cta_goal": "Save this post, try one of these prompts today for your next project, and comment 'AI' to get our free prompt-engineering cheat sheet for developers."
+  },
+  "copy": {
+    "hook_options": [
+      "Stop using ChatGPT like a search bar.",
+      "Your portfolio is empty because you use AI wrong.",
+      "Treat AI like a junior dev, not a search engine."
+    ],
+    "slides": [
+      {
+        "n": 1,
+        "kicker": "THE AI TRAP",
+        "headline": "Stop using ChatGPT like a search bar.",
+        "body": "Asking 'What is X?' teaches you nothing. It builds zero skills and leaves your GitHub looking completely empty to recruiters.",
+        "visual": "Split screen: left shows a basic search query, right shows a complex software architecture diagram."
+      },
+      {
+        "n": 2,
+        "kicker": "PROMPT UPGRADE",
+        "headline": "Change your title.",
+        "body": "Stop asking for answers. Say this instead: 'Act as my technical co-founder. Let us scope a project together.' Now you are building.",
+        "visual": "A chat interface mockup highlighting the exact prompt text in bold."
+      },
+      {
+        "n": 3,
+        "kicker": "ARCHITECTURE",
+        "headline": "Brainstorm the hard stuff.",
+        "body": "Ask AI to break down a monolithic app idea into microservices. Learn how systems actually scale instead of just copying tutorials.",
+        "visual": "A messy flowchart transforming into three clean, organized service boxes."
+      },
+      {
+        "n": 4,
+        "kicker": "CODE REVIEW",
+        "headline": "Demand strict feedback.",
+        "body": "Paste your broken code. Tell it to review your work like a harsh senior developer. Do not let it just rewrite the code for you.",
+        "visual": "Code editor window with red warning underlines and a review comment sidebar."
+      },
+      {
+        "n": 5,
+        "kicker": "STRESS TEST",
+        "headline": "Try to break your app.",
+        "body": "Have the AI generate malicious inputs and edge cases for your project. Finding your own bugs makes you a real engineer.",
+        "visual": "Terminal window running automated security and load tests with warning output."
+      },
+      {
+        "n": 6,
+        "kicker": "INTERVIEW PREP",
+        "headline": "Get grilled on your code.",
+        "body": "Feed your project description to ChatGPT. Have it interview you on your system design choices before a recruiter ever does.",
+        "visual": "A split graphic showing a smiling developer on one side and a prompt list on the other."
+      },
+      {
+        "n": 7,
+        "kicker": "NEXT STEPS",
+        "headline": "Build better projects.",
+        "body": "Save this post, try one of these prompts today, and apply for Cohort 01 via the link in our bio to build your real portfolio.",
+        "visual": "Clean final slide with a bold call-to-action button and brand handle."
+      }
+    ],
+    "caption_linkedin": "If you are only using ChatGPT to answer homework questions or write basic scripts, your portfolio is paying the price.\n\nRecruiters do not care if you know how to prompt an AI for syntax. They care if you can build, scale, and defend a real application.\n\nIt is time to stop treating AI like a search engine and start managing it like a junior teammate.\n\nSwipe through to see five ways to use AI that actually build your engineering skills.\n\nReady to build a portfolio that stands out? Apply for Cohort 01 via the link in our bio.\n\n#SoftwareEngineering #AI #CodingLife #WebDev #TechCareers",
+    "caption_instagram": "Stop using AI like a search engine. Start treating it like a junior dev.\n\nSwipe to see how to actually build portfolio-worthy skills with ChatGPT.\n\nReady to level up? Apply for Cohort 01 at the link in our bio.\n\n#SoftwareEngineering #Coding #WebDev #Tech #Developer",
+    "caption_tiktok": "Stop using ChatGPT for basic Q&A. Here is how to use it like a tech lead to build your portfolio."
+  },
+  "design": {
+    "slides": [
+      {
+        "n": 1,
+        "layout": "cover",
+        "accent_word": "ChatGPT"
+      },
+      {
+        "n": 2,
+        "layout": "prompt",
+        "accent_word": "title",
+        "prompt": "Act as my technical co-founder. Let us scope a project together.",
+        "reply": "Understood. What system are we building today?"
+      },
+      {
+        "n": 3,
+        "layout": "contrast",
+        "accent_word": "Brainstorm",
+        "before": "Copying basic online tutorials line-by-line without understanding",
+        "after": "Breaking down monolithic app ideas into scalable microservices"
+      },
+      {
+        "n": 4,
+        "layout": "list",
+        "accent_word": "feedback",
+        "bullets": [
+          "Paste your broken code",
+          "Request harsh senior reviews",
+          "Fix bugs yourself"
+        ]
+      },
+      {
+        "n": 5,
+        "layout": "prompt",
+        "accent_word": "break",
+        "prompt": "Generate malicious inputs and edge cases for this service.",
+        "reply": "Here are 5 critical failure points in your current logic."
+      },
+      {
+        "n": 6,
+        "layout": "contrast",
+        "accent_word": "grilled",
+        "before": "Waiting for a recruiter to surprise you with hard questions",
+        "after": "Mock interviewing your own system design with AI first"
+      },
+      {
+        "n": 7,
+        "layout": "cta",
+        "accent_word": "projects"
+      }
+    ]
+  },
+  "slides": [
+    {
+      "n": 1,
+      "kicker": "THE AI TRAP",
+      "headline": "Stop using ChatGPT like a search bar.",
+      "body": "Asking 'What is X?' teaches you nothing. It builds zero skills and leaves your GitHub looking completely empty to recruiters.",
+      "visual": "Split screen: left shows a basic search query, right shows a complex software architecture diagram.",
+      "layout": "cover",
+      "accent_word": "ChatGPT"
+    },
+    {
+      "n": 2,
+      "kicker": "PROMPT UPGRADE",
+      "headline": "Give AI a job title.",
+      "body": "Stop asking for answers. Say this instead: 'Act as my technical co-founder. Let us scope a project together.' Now you are building.",
+      "visual": "A chat interface mockup highlighting the exact prompt text in bold.",
+      "layout": "prompt",
+      "accent_word": "title",
+      "prompt": "Act as my technical co-founder. Let's scope a project together.",
+      "reply": "Understood. What system are we building today?",
+      "tip": "01/05"
+    },
+    {
+      "n": 3,
+      "kicker": "ARCHITECTURE",
+      "headline": "Brainstorm the hard stuff.",
+      "body": "Ask AI to break down a monolithic app idea into microservices. Learn how systems actually scale instead of just copying tutorials.",
+      "visual": "A messy flowchart transforming into three clean, organized service boxes.",
+      "layout": "contrast",
+      "accent_word": "Brainstorm",
+      "before": "Copying basic online tutorials line-by-line without understanding",
+      "after": "Breaking down monolithic app ideas into scalable microservices",
+      "tip": "02/05"
+    },
+    {
+      "n": 4,
+      "kicker": "CODE REVIEW",
+      "headline": "Demand strict feedback.",
+      "body": "Paste your broken code. Tell it to review your work like a harsh senior developer. Do not let it just rewrite the code for you.",
+      "visual": "Code editor window with red warning underlines and a review comment sidebar.",
+      "layout": "list",
+      "accent_word": "feedback",
+      "bullets": [
+        "Paste your broken code",
+        "Request harsh senior reviews",
+        "Fix bugs yourself"
+      ],
+      "tip": "03/05"
+    },
+    {
+      "n": 5,
+      "kicker": "STRESS TEST",
+      "headline": "Try to break your app.",
+      "body": "Have the AI generate malicious inputs and edge cases for your project. Finding your own bugs makes you a real engineer.",
+      "visual": "Terminal window running automated security and load tests with warning output.",
+      "layout": "prompt",
+      "accent_word": "break",
+      "prompt": "Generate malicious inputs and edge cases for this service.",
+      "reply": "Here are 5 critical failure points in your current logic.",
+      "tip": "04/05"
+    },
+    {
+      "n": 6,
+      "kicker": "INTERVIEW PREP",
+      "headline": "Get grilled on your code.",
+      "body": "Feed your project description to ChatGPT. Have it interview you on your system design choices before a recruiter ever does.",
+      "visual": "A split graphic showing a smiling developer on one side and a prompt list on the other.",
+      "layout": "contrast",
+      "accent_word": "grilled",
+      "before": "Waiting for a recruiter to surprise you with hard questions",
+      "after": "Mock interviewing your own system design with AI first",
+      "tip": "05/05"
+    },
+    {
+      "n": 7,
+      "kicker": "NEXT STEPS",
+      "headline": "Build better projects.",
+      "body": "Save this post, try one of these prompts today, and apply for Cohort 01 via the link in our bio to build your real portfolio.",
+      "visual": "Clean final slide with a bold call-to-action button and brand handle.",
+      "layout": "cta",
+      "accent_word": "projects"
+    }
+  ],
+  "founder_edits": [
+    "headline: \"Change your title.\" → \"Give AI a job title.\"",
+    "prompt: \"Let us\" → \"Let's\""
+  ]
+}

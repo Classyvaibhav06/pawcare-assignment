@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🐾%3C/text%3E%3C/svg%3E"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Applied AI Lab — Practical AI & digital skills for students and young professionals</title>
+<meta name="description" content="Hands-on cohorts: build real AI workflows, automations and portfolio projects in 6 weeks.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.hero{padding-top:3.2rem;padding-bottom:2rem}
+.term{font-family:var(--mono);font-size:14px;line-height:1.8;padding:.4rem .3rem;color:var(--content-secondary);min-height:140px}
+.term .p{color:var(--info-content)} .term .ok{color:var(--ok)}
+.caret{display:inline-block;width:8px;height:15px;background:var(--content);vertical-align:-2px;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.track{cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:.5rem;position:relative;overflow:hidden}
+.track.on{border-color:var(--content);box-shadow:0 4px 0 var(--shadow-hard)}
+.track .big{position:absolute;right:-4px;bottom:-26px;font-size:96px;font-weight:900;font-style:italic;opacity:.04}
+.week{display:grid;grid-template-columns:70px 1fr;gap:1rem;padding:1rem 0;border-top:1px dashed var(--line-strong)}
+.week:first-child{border-top:0}
+.price{display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden}
+.price.feat{border-color:var(--content);box-shadow:0 6px 0 var(--shadow-hard)}
+.price ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem;font-size:14px;color:var(--content-secondary)}
+.price li::before{content:'✓ ';color:var(--ok);font-weight:700}
+.amt{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+details{border-top:1px dashed var(--line-strong);padding:1rem 0}details summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+details summary::after{content:'+';font-family:var(--mono);color:var(--content-muted)}details[open] summary::after{content:'–'}
+details p{color:var(--content-secondary);margin:.6rem 0 0;font-size:15px}
+.steps{display:flex;gap:.35rem;margin-bottom:1rem}.steps i{flex:1;height:4px;border-radius:4px;background:var(--line-strong)}.steps i.on{background:var(--info)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);border-top:1px dashed var(--line-strong);display:none;gap:.5rem}
+@media(max-width:720px){.sticky-cta{display:flex}.sticky-cta .btn{flex:1;justify-content:center}}
+.logos{display:flex;flex-wrap:wrap;gap:.5rem}
+.optcard{display:flex;gap:.6rem;align-items:center;border:1px solid var(--line-strong);border-radius:12px;padding:.65rem .8rem;cursor:pointer;font-size:14px}
+.optcard:has(input:checked){border-color:var(--info);background:color-mix(in srgb,var(--info) 8%,transparent)}
+.optcard input{accent-color:var(--info)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap inner">
+  <a class="logo" href="#top"><span class="mark" style="font-size:18px;font-weight:800;font-family:var(--mono)">ai/</span><b>Applied AI Lab</b></a>
+  <div class="links"><a href="#tracks">Programmes</a><a href="#curriculum">Curriculum</a><a href="#pricing">Fees</a><a href="#faq">FAQ</a></div>
+  <div style="display:flex;gap:.5rem;align-items:center"><button class="btn sm primary" data-reg>Apply now</button><button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span data-theme-icon>☀</span></button></div>
+</div></nav>
+
+<main id="top">
+<section class="wrap hero">
+  <span class="chip" style="margin-bottom:1.2rem"><span style="width:7px;height:7px;border-radius:50%;background:var(--ok);display:inline-block"></span> Cohort 01 · applications open · starts Jan 2027</span>
+  <h1>Stop watching AI tutorials.<br>Start <span style="background:var(--brand);color:#171717;padding:0 .14em;border-radius:12px">shipping</span> with AI.</h1>
+  <p class="lede" style="margin:1.2rem 0 1.6rem">A 6-week, live, build-first programme for students and young professionals. Learn the AI tools companies actually use — then walk out with <b style="color:var(--content)">3 portfolio projects</b>, a working automation, and a certificate you can link to.</p>
+  <div style="display:flex;gap:.7rem;flex-wrap:wrap;align-items:center"><button class="btn primary" data-reg>Apply for Cohort 01 →</button><button class="btn" data-enq>Talk to a counsellor</button><a href="#curriculum" class="sec" style="font-size:14px;margin-left:.4rem">See syllabus ↓</a></div>
+  <p class="note" style="margin-top:1rem;color:var(--content)">↳ first 50 seats: <b style="font-family:var(--sans);font-size:1rem;background:var(--brand);color:#171717;padding:.05rem .4rem;border-radius:6px">₹4,000 off</b> early-bird</p>
+
+  <div class="frame rv" style="margin-top:2rem;padding:1rem">
+    <div style="display:flex;gap:6px;margin-bottom:.7rem"><i style="width:10px;height:10px;border-radius:50%;background:#ef4444"></i><i style="width:10px;height:10px;border-radius:50%;background:#f59e0b"></i><i style="width:10px;height:10px;border-radius:50%;background:#22c55e"></i><span class="mono muted" style="margin-left:.5rem;font-size:12px">week-4-project.sh</span></div>
+    <div class="term" id="term"></div>
+  </div>
+</section>
+
+<section class="wrap" style="margin-top:1rem">
+  <div class="grid g4">
+    <div class="card rv"><p class="kicker">Format</p><b>Live, online</b><p class="sec" style="font-size:13px;margin:.3rem 0 0">Sat–Sun, 2 hrs + weekday labs</p></div>
+    <div class="card rv"><p class="kicker">Duration</p><b>6 weeks</b><p class="sec" style="font-size:13px;margin:.3rem 0 0">~6 hrs / week</p></div>
+    <div class="card rv"><p class="kicker">Batch size</p><b>Max 40</b><p class="sec" style="font-size:13px;margin:.3rem 0 0">mentor : learner 1 : 10</p></div>
+    <div class="card rv"><p class="kicker">Prerequisite</p><b>None</b><p class="sec" style="font-size:13px;margin:.3rem 0 0">Laptop + curiosity</p></div>
+  </div>
+</section>
+
+<hr class="dash wrap" style="max-width:46rem">
+
+<section class="wrap" id="why">
+  <p class="kicker">Why this exists</p>
+  <h2>Everyone's "learning AI". Few can show what they built.</h2>
+  <div class="grid g3" style="margin-top:1.4rem">
+    <div class="rv"><h3>🛠 Build, don't binge</h3><p class="sec" style="font-size:14px">80% hands-on. Every session ends with something that runs.</p></div>
+    <div class="rv"><h3>💼 Portfolio-first</h3><p class="sec" style="font-size:14px">3 public projects + a case study page recruiters can actually open.</p></div>
+    <div class="rv"><h3>🧭 Tool-agnostic</h3><p class="sec" style="font-size:14px">ChatGPT, Claude, Gemini, n8n, Make, Canva, Lovable — learn when to use which.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="tracks" style="margin-top:3.5rem">
+  <p class="kicker">Programmes</p><h2 style="margin-bottom:1.2rem">Pick your track.</h2>
+  <div class="grid g3" id="trackgrid"></div>
+</section>
+
+<section class="wrap" id="curriculum" style="margin-top:3.5rem">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap"><div><p class="kicker">Curriculum · <span id="curname"></span></p><h2>Six weeks, six shipped things.</h2></div><button class="btn sm" data-enq data-src="syllabus">⬇ Get full syllabus PDF</button></div>
+  <div class="card" style="margin-top:1.2rem" id="weeks"></div>
+</section>
+
+<section class="wrap" id="outcomes" style="margin-top:3.5rem">
+  <p class="kicker">What you walk out with</p>
+  <div class="grid g2">
+    <div class="card rv"><h3>📁 3 portfolio projects</h3><p class="sec" style="font-size:14px">Hosted, linkable, with a write-up of the problem → tools → result.</p></div>
+    <div class="card rv"><h3>⚙️ 1 live automation</h3><p class="sec" style="font-size:14px">An n8n/Make workflow that runs on a schedule and does real work.</p></div>
+    <div class="card rv"><h3>🎓 Verifiable certificate</h3><p class="sec" style="font-size:14px">Unique URL + LinkedIn "Add to profile" button.</p></div>
+    <div class="card rv"><h3>🤝 Alumni community</h3><p class="sec" style="font-size:14px">Job/internship drops, peer reviews, monthly build nights.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="pricing" style="margin-top:3.5rem">
+  <p class="kicker">Fees (INR, incl. GST)</p><h2 style="margin-bottom:1.2rem">Simple pricing. EMI available.</h2>
+  <div class="grid g3">
+    <div class="card price rv"><p class="kicker">Self-paced</p><div class="amt">₹2,999</div><ul><li>All recordings</li><li>Templates & prompt library</li><li>Community access</li></ul><button class="btn" data-reg data-plan="Self-paced">Choose</button></div>
+    <div class="card price feat rv"><span class="ribbon">EARLY BIRD</span><p class="kicker">Live cohort</p><div class="amt">₹7,999 <s class="muted" style="font-size:1rem;font-weight:500">₹11,999</s></div><ul><li>Everything in Self-paced</li><li>12 live sessions + labs</li><li>Project reviews by mentors</li><li>Certificate</li></ul><button class="btn primary" data-reg data-plan="Live cohort">Apply now</button></div>
+    <div class="card price rv"><p class="kicker">Live + 1:1</p><div class="amt">₹14,999</div><ul><li>Everything in Live</li><li>4 × 1:1 mentor calls</li><li>Resume + LinkedIn review</li></ul><button class="btn" data-reg data-plan="Live + 1:1">Choose</button></div>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:.9rem">Student? Verify with college ID for an extra 20% off. 7-day no-questions refund after the first session.</p>
+</section>
+
+<section class="wrap" id="faq" style="margin-top:3.5rem">
+  <p class="kicker">FAQ</p><h2 style="margin-bottom:.6rem">Questions, answered.</h2>
+  <details><summary>Do I need to know coding?</summary><p>No. The Creator & Ops tracks are fully no-code. The Builder track teaches just enough JS/Python to glue APIs together.</p></details>
+  <details><summary>What if I miss a live session?</summary><p>Every session is recorded and posted within 2 hours, with lab instructions you can do on your own time.</p></details>
+  <details><summary>Will I need paid AI subscriptions?</summary><p>No. Everything is designed to run on free tiers; we flag where a paid plan genuinely helps.</p></details>
+  <details><summary>Is there placement support?</summary><p>We don't promise placements. We do share internship/job leads in the alumni group and review your portfolio and resume.</p></details>
+</section>
+
+<section class="wrap" style="margin-top:3.5rem">
+  <div class="frame rv" style="padding:2rem;text-align:center">
+    <p class="kicker">Cohort 01 · Jan 2027</p><h2>Your next project could be built with AI.</h2>
+    <p class="sec">Takes 2 minutes. No payment until you're shortlisted.</p>
+    <div style="display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1rem"><button class="btn primary" data-reg>Apply now →</button><a class="btn" href="https://wa.me/?text=Hi%2C%20I%27m%20interested%20in%20the%20Applied%20AI%20Lab%20cohort" target="_blank" rel="noopener">💬 WhatsApp us</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap inner"><span>© 2026 Applied AI Lab — landing-page prototype by Vaibhav.</span><span class="mono"><a href="../index.html">← back to submission</a></span></div></footer>
+<div class="sticky-cta"><button class="btn" data-enq>Enquire</button><button class="btn primary" data-reg>Apply now</button></div>
+<div id="modal-root"></div>
+
+<script src="../assets/shell.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

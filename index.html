@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🐾%3C/text%3E%3C/svg%3E"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vaibhav — Product, Design & AI Systems Intern · Assignment</title>
+<meta name="description" content="Submission: Practo-for-Animals MVP, AI course landing page, and an AI carousel pipeline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.hero{padding-top:4rem;padding-bottom:1rem}
+.toc{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.proj{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.7rem;text-decoration:none}
+.proj .big{position:absolute;right:10px;bottom:-18px;font-size:90px;line-height:1;font-weight:900;font-style:italic;opacity:.04;transition:opacity .3s}
+.proj:hover .big{opacity:.08}
+.proj .links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:auto}
+.sec-h{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1rem}.sec-h .num{font-family:var(--mono);color:var(--content-muted);font-size:13px}
+.prose{color:var(--content-secondary);font-size:15.5px}.prose b{color:var(--content)}
+.prose ul{padding-left:1.1rem;margin:.4rem 0}.prose li{margin:.25rem 0}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl td,.tbl th{border-top:1px dashed var(--line-strong);padding:.6rem .4rem;text-align:left;vertical-align:top}
+.tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--content-muted);font-weight:600;border-top:0}
+.tbl td:first-child{white-space:nowrap;font-weight:600;color:var(--content)}
+.flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.6rem;align-items:stretch}
+.node{border:1px solid var(--line-strong);border-radius:14px;padding:.9rem .8rem;background:var(--surface-float);font-size:12.5px;position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;transition:transform .2s,border-color .2s}
+.node:hover{transform:translateY(-2px);border-color:var(--line-bold)}
+.node-top{display:flex;flex-direction:column;gap:.35rem}
+.node b{font-size:13px;color:var(--content);line-height:1.25}
+.node p{margin:0;font-size:11.5px;color:var(--content-secondary);line-height:1.4}
+.node .tool{font-family:var(--mono);font-size:10px;color:var(--info-content);margin-top:.6rem;padding-top:.4rem;border-top:1px dashed var(--line);word-break:break-word}
+.node.human{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 8%,var(--surface-float))}
+.node.human .badge-type{color:var(--brand-content);background:var(--brand)}
+.node:not(:last-child)::after{content:'→';position:absolute;right:-.55rem;top:50%;transform:translateY(-50%);color:var(--content-muted);font-family:var(--mono);font-size:12px;z-index:2;background:var(--surface);line-height:1;width:14px;height:14px;display:grid;place-items:center;border-radius:50%}
+@media(max-width:960px){.flow{grid-template-columns:repeat(3,1fr)}.node::after{display:none}}
+@media(max-width:600px){.flow{grid-template-columns:1fr 1fr}.node{min-height:140px}}
+.flow-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:960px){.flow-6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.flow-6{grid-template-columns:1fr 1fr}}
+.carousel-box{background:var(--surface-sunken);border:1px solid var(--line-strong);border-radius:20px;padding:1.25rem;margin:1.2rem 0}
+.carousel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:.5rem;flex-wrap:wrap}
+.carousel-counter{font-family:var(--mono);font-size:12px;color:var(--content-muted)}
+.carousel-nav-btn{width:34px;height:34px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface-float);color:var(--content);display:grid;place-items:center;cursor:pointer;transition:background .15s,transform .15s}
+.carousel-nav-btn:hover{background:var(--surface-inverted);color:var(--content-inverted);transform:scale(1.05)}
+.carousel-nav-btn:active{transform:scale(.95)}
+.strip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.2rem .2rem 1rem;scroll-behavior:smooth}
+.strip img{width:240px;height:300px;object-fit:cover;flex:none;border-radius:14px;border:1px solid var(--line-strong);scroll-snap-align:start;cursor:zoom-in;background:#100e0e;box-shadow:0 6px 20px #00000026;transition:transform .2s,border-color .2s}
+.strip img:hover{transform:translateY(-4px);border-color:var(--brand)}
+.carousel-footer{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:.75rem;padding-top:.75rem;border-top:1px dashed var(--line)}
+.carousel-btns{display:flex;gap:.5rem;flex-wrap:wrap}
+pre.code{font-family:var(--mono);font-size:12.5px;line-height:1.6;background:var(--surface-sunken);border:1px solid var(--line);border-radius:14px;padding:1rem;overflow-x:auto;color:var(--content-secondary);margin:0}
+.lb{position:fixed;inset:0;z-index:99;background:#000d;display:flex;align-items:center;justify-content:center;padding:1rem}.lb img{max-height:94vh;max-width:94vw;border-radius:12px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap inner">
+  <a class="logo" href="#top"><span class="mark" style="font-weight:800;font-size:18px">V</span><b>Vaibhav</b><span class="tag">assignment</span></a>
+  <div class="links"><a href="#p1">MVP</a><a href="#p2">Course page</a><a href="#p3">AI carousel</a><a href="#stack">Stack</a></div>
+  <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span data-theme-icon>☀</span></button>
+</div></nav>
+
+<main id="top">
+<section class="wrap hero">
+  <span class="chip"><span style="width:7px;height:7px;border-radius:50%;background:var(--ok);display:inline-block"></span> Product Development, Design & AI Systems Intern · candidate submission</span>
+  <h1 style="margin-top:1.2rem">Three rough ideas, turned into<br>things you can <span style="background:var(--brand);color:#171717;padding:0 .15em;border-radius:10px">click</span>.</h1>
+  <p class="lede" style="margin-top:1rem">I built working prototypes instead of static mockups. Both pages run on real search, filters and forms, and the carousel came out of a pipeline I wrote and ran. Every link below is live.</p>
+  <div class="toc">
+    <a class="btn primary" href="pawcare/">① Open PawCare MVP →</a>
+    <a class="btn" href="academy/">② Open course landing →</a>
+    <a class="btn" href="#p3">③ See AI carousel ↓</a>
+  </div>
+  <p class="note" style="margin-top:1.2rem">↳ everything is responsive, so try it on your phone too</p>
+</section>
+
+<section class="wrap" style="margin-top:2rem"><div class="grid g3">
+  <a class="card proj rv" href="pawcare/"><span class="tag">01 · MVP</span><h3>PawCare: Practo for Animals</h3><p class="sec" style="font-size:14px;margin:0">Home and search with 7 categories, 8 filters, map preview, booking, listing and corrections.</p><span class="big">pc</span></a>
+  <a class="card proj rv" href="academy/"><span class="tag">02 · Landing</span><h3>Applied AI Lab</h3><p class="sec" style="font-size:14px;margin:0">Course landing with track switcher, 3-step application, partial-lead capture and enquiry.</p><span class="big">ai/</span></a>
+  <a class="card proj rv" href="#p3"><span class="tag">03 · AI system</span><h3>Idea → Carousel pipeline</h3><p class="sec" style="font-size:14px;margin:0">A Python pipeline with 5 stages. It produced the 7-slide carousel below in about 40s for ₹0.</p><span class="big">→</span></a>
+</div></section>
+
+<hr class="dash wrap" style="max-width:46rem">
+
+<!-- ============ 1 ============ -->
+<section class="wrap" id="p1">
+  <div class="sec-h"><span class="num">01</span><h2>PawCare: animal-care discovery MVP</h2></div>
+  <div class="frame rv" style="padding:.4rem;margin-bottom:1.2rem"><iframe src="pawcare/" title="PawCare prototype" loading="lazy" style="width:100%;height:620px;border:0;border-radius:16px;display:block"></iframe></div>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem"><a class="btn sm primary" href="pawcare/">Open full screen</a><a class="btn sm" href="pawcare/#/search?cat=hospital&emergency=1&sort=distance">Try: 24×7 hospitals</a><a class="btn sm" href="pawcare/#/search?q=vaccination&sp=Cat">Try: cat vaccination</a></div>
+  <div class="grid g2 prose">
+    <div><h3 style="color:var(--content);margin-bottom:.5rem">Essential MVP elements</h3><ul>
+      <li><b>Intent-first search</b> by need ("vaccination", "X-ray") or by provider, plus location</li>
+      <li><b>7 categories</b>: clinics, 24×7 hospitals, boarding, diagnostics, ambulance, NGOs</li>
+      <li><b>Emergency strip</b> pinned above the fold, since a panicked owner shouldn't have to search</li>
+      <li><b>Comparable result cards</b> showing fee, open status, distance, rating, species and next slot</li>
+      <li><b>Provider detail</b> with services, languages, vets on staff and a <b>"last verified" date</b></li>
+      <li>A <b>slot request</b> that needs no account. The owner gets a WhatsApp confirmation</li></ul></div>
+    <div><h3 style="color:var(--content);margin-bottom:.5rem">Filters & provider info</h3><ul>
+      <li><b>Availability:</b> open now, 24×7, home visit/pickup, verified only</li>
+      <li><b>Pet type:</b> dog, cat, bird, exotic, cattle, stray. Exotic-pet owners struggle most to find care</li>
+      <li><b>Distance</b> and <b>max fee</b> sliders, <b>min rating</b>, and sort by best match, nearest, rating or fee</li>
+      <li>Filters live in the <b>URL</b>, so any search can be shared as a link (handy on WhatsApp)</li>
+      <li>"Best match" ranks open listings first, then verified ones, then rating × log(reviews)</li></ul></div>
+  </div>
+  <h3 style="margin:1.6rem 0 .6rem">CTA strategy</h3>
+  <table class="tbl"><tr><th>CTA</th><th>Who</th><th>Where & why</th></tr>
+    <tr><td>Find a Vet</td><td>Pet parent</td><td>Primary hero button and nav. Most visits come with one job to do</td></tr>
+    <tr><td>🚑 Emergency</td><td>Pet parent / rescuer</td><td>Always in the nav, a pulsing strip on home and an SOS button in the mobile bottom bar. It goes straight to results sorted by distance</td></tr>
+    <tr><td>Explore Services</td><td>Browsing owner</td><td>Category grid and chips. Lets people discover boarding or diagnostics they didn't know were listed</td></tr>
+    <tr><td>Book / Call / Dispatch / Contact</td><td>Pet parent</td><td>The verb changes by category, so ambulances say "Dispatch" and NGOs say "Contact"</td></tr>
+    <tr><td>List Your Business</td><td>Provider</td><td>Shown in the nav, a "free listing" card on home, and the empty state ("can't find a provider?"). This is the supply side of the marketplace</td></tr>
+    <tr><td>Submit a Correction</td><td>Community</td><td>Placed on home, under results and in every detail sheet. With the "last verified" date, it keeps data trustworthy without a big ops team</td></tr></table>
+  <h3 style="margin:1.6rem 0 .6rem">Attractive, intuitive & mobile-first</h3>
+  <p class="prose">The pages are calm and neutral with one yellow accent, so medical information never looks like an ad. Emoji category icons load instantly and suit a warm brand. On phones, filters move into a <b>bottom sheet</b>, the map opens as a full-screen layer, and a thumb-reach bar holds <b>Filters · Map · SOS</b>. Tap targets are at least 38px, there's a dark mode, and motion respects reduced-motion settings. Search state is held in the URL, so the back button behaves as people expect.</p>
+  <p class="muted" style="font-size:13px">Production path: Next.js + Supabase (Postgres + PostGIS for "near me"), Google Places for seeding, WhatsApp Business API for booking confirmations, and an admin queue for listings and corrections. Provider data in the prototype is clearly labelled as fictional sample data.</p>
+</section>
+
+<hr class="dash wrap" style="max-width:46rem">
+
+<!-- ============ 2 ============ -->
+<section class="wrap" id="p2">
+  <div class="sec-h"><span class="num">02</span><h2>Applied AI Lab: course landing page</h2></div>
+  <div class="frame rv" style="padding:.4rem;margin-bottom:1.2rem"><iframe src="academy/" title="Course landing prototype" loading="lazy" style="width:100%;height:620px;border:0;border-radius:16px;display:block"></iframe></div>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem"><a class="btn sm primary" href="academy/">Open full screen</a></div>
+  <div class="grid g2 prose">
+    <div><h3 style="color:var(--content);margin-bottom:.5rem">Page structure</h3><ol style="padding-left:1.1rem;margin:.4rem 0">
+      <li><b>Hero:</b> the "Stop watching tutorials, start shipping" promise, Apply and Talk-to-counsellor buttons, and an animated terminal showing the outcome</li>
+      <li><b>Key facts:</b> format, duration, batch size and prerequisites, which answers the first four objections</li>
+      <li><b>Why us:</b> build-first, portfolio-first, tool-agnostic</li>
+      <li><b>Track picker:</b> Creators, Builders and Work/Ops. Picking a track rewrites the curriculum below it</li>
+      <li><b>Six-week curriculum</b> with one shipped output per week</li>
+      <li><b>Outcomes:</b> 3 projects, 1 live automation, a verifiable certificate and community</li>
+      <li><b>Pricing in INR</b> (3 tiers, middle one anchored), EMI, student discount and refund policy</li>
+      <li><b>Honest FAQ</b> (for example, "we don't promise placements"), then a final CTA</li></ol></div>
+    <div><h3 style="color:var(--content);margin-bottom:.5rem">Value proposition</h3>
+      <p>For students and young professionals who are "learning AI" but can't show anything for it: <b>six weeks, six shipped things, and a portfolio a recruiter can open.</b> The pitch is about outcomes. The tools are just how you get there.</p>
+      <h3 style="color:var(--content);margin:1rem 0 .5rem">CTAs by intent</h3><ul>
+      <li><b>High intent:</b> Apply now. It shows in the nav, hero, pricing, the final CTA and a sticky mobile bar</li>
+      <li><b>Medium:</b> Talk to a counsellor (callback) or WhatsApp us</li>
+      <li><b>Low:</b> Get the syllabus PDF. A lead magnet that only asks for a phone number</li></ul></div>
+  </div>
+  <h3 style="margin:1.6rem 0 .6rem">Registration & lead-capture journey</h3>
+  <div class="flow flow-6">
+    <div class="node"><span class="tag">01</span><b>Visit</b>UTM tags captured from ads, reels or LinkedIn<span class="tool">utm_* → lead record</span></div>
+    <div class="node"><span class="tag">02</span><b>Step 1 form</b>Name, email, WhatsApp, saved right away as a <b>partial lead</b><span class="tool">Supabase / Sheets</span></div>
+    <div class="node"><span class="tag">03</span><b>Step 2–3</b>Track, plan, status and goal, used to qualify the lead<span class="tool">lead score</span></div>
+    <div class="node"><span class="tag">04</span><b>Instant reply</b>Email and WhatsApp with the syllabus and an application ID<span class="tool">n8n → Resend + WATI</span></div>
+    <div class="node human"><span class="tag">05</span><b>Counsellor call</b>Within 24h. Drop-offs from step 1 get a nudge at 2h and 24h<span class="tool">CRM task</span></div>
+    <div class="node"><span class="tag">06</span><b>Pay & onboard</b>Razorpay link with EMI and discount, then a Discord invite<span class="tool">Razorpay webhook</span></div>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:.8rem">In the prototype, the 3-step form validates input (Indian mobile regex, email) and writes <span class="hl">aal_partial_leads</span>, <span class="hl">aal_applications</span> and <span class="hl">aal_enquiries</span> to localStorage, with UTM tags attached. It is not connected to a real backend.</p>
+</section>
+
+<hr class="dash wrap" style="max-width:46rem">
+
+<!-- ============ 3 ============ -->
+<section class="wrap" id="p3">
+  <div class="sec-h"><span class="num">03</span><h2>AI content system: idea → carousel</h2></div>
+  <p class="lede" style="margin-bottom:1.2rem">The founder types one sentence. A few seconds later there's a researched, on-brand, editable carousel plus LinkedIn and Instagram captions. A designer is only needed for the brand template, once.</p>
+  <div class="flow">
+    <div class="node human">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">01</span><span class="chip" style="font-size:10px;padding:1px 6px">Human</span></div>
+        <b>Raw Idea</b>
+        <p>One line typed into Telegram, Notion form, or Google Sheet</p>
+      </div>
+      <div class="tool">⚡ trigger</div>
+    </div>
+    <div class="node">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">02</span><span class="chip" style="font-size:10px;padding:1px 6px">AI</span></div>
+        <b>Research</b>
+        <p>Target pain points, angles, 6 key takeaways, citations check</p>
+      </div>
+      <div class="tool">🔍 Perplexity / Gemini</div>
+    </div>
+    <div class="node">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">03</span><span class="chip" style="font-size:10px;padding:1px 6px">AI</span></div>
+        <b>Copywriting</b>
+        <p>3 hook variants, 7 slides with char limits, 2 platform captions</p>
+      </div>
+      <div class="tool">✍️ Claude / Gemini</div>
+    </div>
+    <div class="node">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">04</span><span class="chip" style="font-size:10px;padding:1px 6px">Rule</span></div>
+        <b>Art Direction</b>
+        <p>Selects layout per slide from brand set with variety guardrails</p>
+      </div>
+      <div class="tool">📐 LLM + Guardrails</div>
+    </div>
+    <div class="node">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">05</span><span class="chip" style="font-size:10px;padding:1px 6px">Engine</span></div>
+        <b>Render Engine</b>
+        <p>1080×1350 PNG slides & PDF compilation with overflow checks</p>
+      </div>
+      <div class="tool">🎨 Playwright / Canva API</div>
+    </div>
+    <div class="node human">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">06</span><span class="chip" style="font-size:10px;padding:1px 6px">Review</span></div>
+        <b>Review & Edit</b>
+        <p>Founder tweaks copy in JSON/Canva, re-renders in ~30s for ₹0</p>
+      </div>
+      <div class="tool">🔄 --render-only</div>
+    </div>
+    <div class="node">
+      <div class="node-top">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">07</span><span class="chip" style="font-size:10px;padding:1px 6px">Social</span></div>
+        <b>Publish</b>
+        <p>Document PDF to LinkedIn, high-res carousel PNGs to Instagram</p>
+      </div>
+      <div class="tool">🚀 Buffer / Composio</div>
+    </div>
+  </div>
+
+  <div class="carousel-box rv">
+    <div class="carousel-header">
+      <div>
+        <h3 style="margin:0 0 .2rem">Sample Output: Real Pipeline Render</h3>
+        <p class="muted" style="font-size:13px;margin:0">Idea: <i>"5 ways to use AI like a junior teammate instead of Google search"</i> · 10.5s run</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem">
+        <span class="carousel-counter" id="carouselCounter">Slide 1 of 7</span>
+        <button class="carousel-nav-btn" onclick="slideNav(-1)" aria-label="Previous slide">←</button>
+        <button class="carousel-nav-btn" onclick="slideNav(1)" aria-label="Next slide">→</button>
+      </div>
+    </div>
+
+    <div class="strip custom-scroll" id="strip">
+      <img src="carousel/sample/slides/slide-01.webp" alt="Slide 1 — Stop using ChatGPT like a search bar">
+      <img src="carousel/sample/slides/slide-02.webp" alt="Slide 2 — Give AI a job title">
+      <img src="carousel/sample/slides/slide-03.webp" alt="Slide 3 — Brainstorm the hard stuff">
+      <img src="carousel/sample/slides/slide-04.webp" alt="Slide 4 — Demand strict feedback">
+      <img src="carousel/sample/slides/slide-05.webp" alt="Slide 5 — Try to break your app">
+      <img src="carousel/sample/slides/slide-06.webp" alt="Slide 6 — Get grilled on your code">
+      <img src="carousel/sample/slides/slide-07.webp" alt="Slide 7 — CTA">
+    </div>
+
+    <div class="carousel-footer">
+      <div class="carousel-btns">
+        <a class="btn sm primary" href="carousel/sample/carousel.pdf" download>↓ Download LinkedIn PDF</a>
+        <a class="btn sm" href="carousel/sample/carousel.json" target="_blank">View carousel.json (editable)</a>
+        <a class="btn sm" href="carousel/carousel_pipeline.py" target="_blank">pipeline source (.py)</a>
+      </div>
+      <span class="note" style="font-size:1.15rem;margin:0">💡 click any slide to expand full resolution</span>
+    </div>
+  </div>
+
+  <h3 style="margin:2rem 0 .6rem">Why it's built this way</h3>
+  <div class="grid g2 prose">
+    <div><ul>
+      <li><b>Strict JSON between stages.</b> Each step's output can feed an n8n or Make node directly, with no prose parsing</li>
+      <li><b>Brand rules live in code, not the prompt.</b> The model picks from 6 layouts, and the code forces cover/CTA placement and stops repeated layouts. This is what keeps it from looking AI-generated</li>
+      <li><b>Character limits + overflow detection.</b> If a slide runs long, the renderer flags it instead of shipping clipped text</li></ul></div>
+    <div><ul>
+      <li><b>JSON is the editable source.</b> It works like a Figma file the founder can edit in any text box. A Google Sheet view is a 10-minute n8n add-on</li>
+      <li><b>Cheap to iterate.</b> Changing copy only re-renders and costs ₹0. Only a new idea calls the LLM</li>
+      <li><b>Model-agnostic.</b> Switching between Gemini, Claude and GPT is one env var (<span class="hl">LLM_MODEL</span>)</li></ul></div>
+  </div>
+  <h3 style="margin:1.6rem 0 .6rem">No-code version (n8n), if the founder prefers clicking to code</h3>
+  <pre class="code">[Telegram trigger "/carousel &lt;idea&gt;"]
+  → [HTTP: Perplexity — research JSON]
+  → [Claude node — copy JSON (hooks, 7 slides, captions)]
+  → [Code node — layout guardrails]
+  → [Canva Connect API — autofill Brand Template (Bulk Create)]   ← editable in Canva
+  → [Telegram: send preview + "Approve / Edit"]
+  → on Approve → [Buffer/LinkedIn: schedule PDF + caption]</pre>
+</section>
+
+<hr class="dash wrap" style="max-width:46rem">
+
+<section class="wrap" id="stack">
+  <div class="sec-h"><span class="num">04</span><h2>Recommended tools & stack</h2></div>
+  <table class="tbl">
+    <tr><th>Layer</th><th>Pick</th><th>Why</th></tr>
+    <tr><td>Prototyping</td><td>Hand-written HTML/CSS/JS (these pages) → Lovable / v0 for speed</td><td>Real interactions to test with users on day one, with no lock-in</td></tr>
+    <tr><td>Production web</td><td>Next.js + Tailwind on Vercel</td><td>SEO for "vet near me" pages, plus a big hiring pool</td></tr>
+    <tr><td>Data / auth</td><td>Supabase (Postgres + PostGIS, Auth, Storage)</td><td>Geo queries, row-level security and a generous free tier</td></tr>
+    <tr><td>Design</td><td>Figma (system) + Canva Brand Templates (content)</td><td>Figma for the product. Canva so non-designers can stay on-brand</td></tr>
+    <tr><td>LLMs</td><td>Claude (writing), Gemini Flash (fast/cheap), Perplexity (research)</td><td>Pick per task. Swappable through one API layer</td></tr>
+    <tr><td>Automation</td><td>n8n (self-host) or Make</td><td>Visual workflows the founder can read and edit</td></tr>
+    <tr><td>Messaging</td><td>WhatsApp Business API (WATI/Interakt), Resend for email</td><td>Indian users answer WhatsApp, not email</td></tr>
+    <tr><td>Payments / analytics</td><td>Razorpay · PostHog</td><td>UPI and EMI, plus funnel and drop-off tracking for the application form</td></tr>
+  </table>
+</section>
+
+<section class="wrap" style="margin-top:3rem">
+  <div class="frame rv" style="padding:1.6rem">
+    <p class="kicker">What I'd do in week one</p>
+    <ol class="prose" style="padding-left:1.1rem;margin:.4rem 0 0">
+      <li>Seed 200 real Bengaluru providers from Google Places, then call-verify the top 50</li>
+      <li>Deploy the course page with live forms, plus n8n → WhatsApp and Sheets</li>
+      <li>Put the carousel pipeline behind a Telegram bot so you can create posts from your phone</li></ol>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap inner"><span>© 2026 Vaibhav · built for the Product, Design & AI Systems Intern assignment.</span><span class="mono">design language inspired by armandev.space</span></div></footer>
+<script src="assets/shell.js"></script>
+<script>
+const stripEl = document.getElementById('strip');
+const counterEl = document.getElementById('carouselCounter');
+
+function updateCounter() {
+  if (!stripEl || !counterEl) return;
+  const slideWidth = 240 + 16; // card width + gap
+  const index = Math.round(stripEl.scrollLeft / slideWidth) + 1;
+  const total = stripEl.querySelectorAll('img').length || 7;
+  counterEl.textContent = `Slide ${Math.min(Math.max(index, 1), total)} of ${total}`;
+}
+
+stripEl.addEventListener('scroll', () => {
+  window.requestAnimationFrame(updateCounter);
+}, { passive: true });
+
+function slideNav(dir) {
+  if (!stripEl) return;
+  const slideWidth = 240 + 16;
+  stripEl.scrollBy({ left: dir * slideWidth, behavior: 'smooth' });
+}
+
+document.getElementById('strip').addEventListener('click',e=>{if(e.target.tagName!=='IMG')return;const d=document.createElement('div');d.className='lb';d.innerHTML='<img src="'+e.target.src+'" alt="">';d.onclick=()=>d.remove();document.body.appendChild(d)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.lb').forEach(x=>x.remove())});
+</script>
+</body>
+</html>

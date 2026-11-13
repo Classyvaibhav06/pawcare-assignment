@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🐾%3C/text%3E%3C/svg%3E"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PawCare — Find trusted animal care near you</title>
+<meta name="description" content="Practo for Animals: discover vets, 24×7 hospitals, boarding, diagnostics, ambulances and NGOs near you.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.hero{padding-top:3.5rem;padding-bottom:2rem;position:relative}
+.searchbox{display:grid;grid-template-columns:1.4fr 1fr auto;gap:.5rem;padding:.5rem;border-radius:20px;background:var(--surface-float);border:1px solid var(--line-strong);box-shadow:0 6px 0 0 var(--shadow-hard)}
+.searchbox .input{border:0;background:transparent;box-shadow:none}.searchbox select.input{appearance:none;-webkit-appearance:none;cursor:pointer}.searchbox select.input option{background:var(--surface)}
+.searchbox .seg{display:flex;align-items:center;gap:.4rem;padding-left:.6rem;border-radius:14px}
+.searchbox .seg+.seg{border-left:1px dashed var(--line-strong)}
+@media(max-width:640px){.searchbox{grid-template-columns:1fr}.searchbox .seg+.seg{border-left:0;border-top:1px dashed var(--line-strong)}}
+.quick{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.quick button{cursor:pointer}
+.cat{position:relative;overflow:hidden;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:.4rem;min-height:132px}
+.cat .ic{font-size:26px}
+.cat .big{position:absolute;right:-6px;bottom:-22px;font-size:90px;font-weight:900;font-style:italic;opacity:.04}
+.cat:hover .big{opacity:.08}
+.sos .pulse{flex:none}.sos{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border:1px solid color-mix(in srgb,var(--bad) 45%,var(--line));background:color-mix(in srgb,var(--bad) 7%,var(--surface));border-radius:18px;padding:1rem 1.2rem}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--bad);box-shadow:0 0 0 0 var(--bad);animation:pl 1.6s infinite;display:inline-block}
+@keyframes pl{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.step{display:flex;gap:.9rem}.step .n{font-family:var(--mono);font-size:12px;width:28px;height:28px;flex:none;border-radius:8px;border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--content-muted)}
+/* search view */
+.sv{display:grid;grid-template-columns:250px minmax(0,1fr) 340px;gap:1.25rem;align-items:start;padding-top:1.25rem}
+.filters{position:sticky;top:76px;display:flex;flex-direction:column;gap:1.1rem;max-height:calc(100vh - 90px);overflow:auto;padding-right:.25rem}
+.fgroup h4{margin:0 0 .5rem;font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--content-muted);font-weight:600}
+.chk{display:flex;align-items:center;gap:.55rem;font-size:14px;color:var(--content-secondary);padding:.22rem 0;cursor:pointer}
+.chk input{accent-color:var(--info);width:16px;height:16px}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}.chips .chip{cursor:pointer}
+.chiprow{display:flex;gap:.45rem;overflow-x:auto;scrollbar-width:none;padding:.9rem 0 .25rem;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,#000 88%,transparent 100%)}
+.chiprow .chip{flex:none;cursor:pointer}
+input[type=range]{width:100%;accent-color:var(--info)}
+.pcard{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:1rem;cursor:pointer;position:relative}
+.pcard.hi{border-color:var(--info)}
+.av{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:var(--surface-float);border:1px solid var(--line)}
+.meta{display:flex;flex-wrap:wrap;gap:.35rem .8rem;font-size:13px;color:var(--content-secondary);margin:.3rem 0 .55rem}
+.badge{font-size:11px;font-weight:600;border-radius:6px;padding:.1rem .45rem;border:1px solid}
+.b-ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent);background:color-mix(in srgb,var(--ok) 10%,transparent)}
+.b-bad{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 45%,transparent);background:color-mix(in srgb,var(--bad) 8%,transparent)}
+.b-info{color:var(--info-content);border-color:color-mix(in srgb,var(--info) 45%,transparent);background:color-mix(in srgb,var(--info) 8%,transparent)}
+.b-mut{color:var(--content-muted);border-color:var(--line-strong)}
+.side-actions{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:.5rem;text-align:right}
+.map{position:sticky;top:76px;height:calc(100vh - 100px);min-height:420px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:
+ radial-gradient(circle at 30% 40%,color-mix(in srgb,var(--info) 8%,transparent),transparent 40%),
+ linear-gradient(var(--line-subtle) 1px,transparent 1px) 0 0/28px 28px,
+ linear-gradient(90deg,var(--line-subtle) 1px,transparent 1px) 0 0/28px 28px,var(--surface-sunken)}
+.road{position:absolute;background:var(--line-strong);opacity:.6}
+.pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;display:flex;flex-direction:column;align-items:center;transition:transform .2s;z-index:2}
+.pin span{background:var(--surface-float);border:1px solid var(--line-strong);border-radius:999px;padding:.15rem .5rem;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 3px 0 var(--shadow-hard)}
+.pin i{width:2px;height:8px;background:var(--line-strong)}
+.pin.hi{transform:translate(-50%,-100%) scale(1.15);z-index:3}.pin.hi span{background:var(--surface-inverted);color:var(--content-inverted)}
+.you{position:absolute;left:56%;top:60%;z-index:1;width:14px;height:14px;border-radius:50%;background:var(--info);border:3px solid #fff;box-shadow:0 0 0 8px color-mix(in srgb,var(--info) 25%,transparent)}
+.mobbar{display:none}
+@media(max-width:1100px){.sv{grid-template-columns:230px minmax(0,1fr)}.map{display:none}.map.show{display:block;position:fixed;inset:64px 0 0 0;height:auto;z-index:40;border-radius:0}}
+@media(max-width:780px){.sv{grid-template-columns:1fr}.filters{display:none}.filters.show{display:flex;position:fixed;inset:0;top:auto;max-height:82vh;z-index:80;background:var(--surface);border-top:1px solid var(--line-strong);border-radius:22px 22px 0 0;padding:1.25rem 1.25rem 5rem}
+ .mobbar{display:flex;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));z-index:85;gap:.4rem;background:var(--surface-inverted);color:var(--content-inverted);border-radius:999px;padding:.3rem}
+ .mobbar button{background:none;border:0;color:inherit;padding:.55rem 1rem;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+ .pcard{grid-template-columns:52px minmax(0,1fr)}.av{width:52px;height:52px}.side-actions{grid-column:1/-1;flex-direction:row;align-items:center;text-align:left}}
+.slots{display:flex;gap:.4rem;flex-wrap:wrap}.slots .chip{cursor:pointer}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:.45rem 1rem;font-size:14px}.kv dt{color:var(--content-muted)}.kv dd{margin:0}
+.ico{flex:none;vertical-align:-3px}
+.sos-btn{background:#dc2626;color:#fff;border-color:#991b1b}
+.mark .ico{color:#171717}
+.av .ico{color:var(--content-secondary)}
+.pin span{display:inline-flex;align-items:center;gap:.25rem}
+.chk input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--line-strong);border-radius:5px;background:var(--surface);display:grid;place-items:center;cursor:pointer;margin:0}
+.chk input:checked{background:var(--info);border-color:var(--info)}
+.chk input:checked::after{content:'';width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.sv>section{padding-top:0}.filters,.map{margin-top:0}
+.hide-sm{}
+@media(max-width:640px){.hide-sm{display:none}.wrap-wide{padding:0 1rem}}
+@media(max-width:780px){body.has-mobbar main{padding-bottom:90px}.has-mobbar .foot{padding-bottom:120px}.mobbar button{display:inline-flex;align-items:center;gap:.35rem}}
+.empty{text-align:center;padding:3rem 1rem;border:1px dashed var(--line-strong);border-radius:18px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap-wide inner">
+  <a class="logo" href="#/"><span class="mark" id="lg"></span><b>PawCare</b><span class="tag hide-sm" style="margin-left:.2rem">beta · Bengaluru</span></a>
+  <div class="links"><a href="#/search?cat=clinic">Find a Vet</a><a href="#/search">Explore Services</a><a href="#/search?cat=ngo">Adopt & Rescue</a><a href="#" data-open="list">For Providers</a></div>
+  <div style="display:flex;gap:.5rem;align-items:center">
+    <a class="btn sm sos-btn" href="#/search?cat=ambulance&emergency=1&sort=distance" title="Emergency" data-ic="siren"><span class="hide-sm">Emergency</span></a>
+    <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span data-theme-icon>☀</span></button>
+  </div>
+</div></nav>
+
+<main id="view"></main>
+
+<footer class="foot"><div class="wrap-wide inner">
+  <span>© 2026 PawCare — prototype by Vaibhav for the Product & AI Systems internship assignment.</span>
+  <span class="mono">Provider data shown is fictional sample data · <a href="../index.html">← back to submission</a></span>
+</div></footer>
+
+<div class="mobbar" id="mobbar" hidden><button onclick="toggleSheet('filters')" data-ic="sliders">Filters</button><button onclick="toggleSheet('map')" data-ic="map">Map</button><button onclick="location.hash='#/search?cat=ambulance&emergency=1&sort=distance'" data-ic="siren" style="color:#f87171">SOS</button></div>
+<div id="modal-root"></div>
+
+<script src="../assets/shell.js"></script>
+<script src="../assets/icons.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

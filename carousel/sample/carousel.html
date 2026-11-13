@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&family=Caveat:wght@700&display=swap');
+*{box-sizing:border-box;margin:0}html,body{width:1080px;height:1350px;overflow:hidden;background:#100e0e}
+.slide{width:1080px;height:1350px;background:#100e0e;color:#fff;font-family:Geist,system-ui,sans-serif;position:relative;padding:92px 96px 140px;overflow:hidden;display:flex;flex-direction:column;
+ background-image:linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px);background-size:54px 54px}
+.slide::after{content:'';position:absolute;inset:30px;border:2px dashed #ffffff22;border-radius:40px;pointer-events:none}
+.top{display:flex;align-items:center;gap:20px;font-family:'Geist Mono';font-size:32px;color:#d4d4d4;position:relative;z-index:2}
+.mark{width:72px;height:72px;border-radius:20px;background:#fcd34d;color:#171717;display:grid;place-items:center;font-weight:800;font-size:28px;font-family:'Geist Mono'}
+.pg{margin-left:auto;color:#a3a3a3}
+.ghost{position:absolute;right:56px;bottom:96px;font-size:420px;font-weight:900;font-style:italic;letter-spacing:-.06em;line-height:.8;color:#fff;opacity:.045;z-index:1}
+.content{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:40px;gap:40px;position:relative;z-index:2}
+.tip{font-family:Caveat;font-size:58px;color:#fcd34d;transform:rotate(-2deg);align-self:flex-start;margin-bottom:-18px}
+.kick{font-family:'Geist Mono';font-size:32px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7cb4ff}
+h1{text-wrap:balance;font-size:84px;line-height:1.16;letter-spacing:-.04em;font-weight:750;max-width:880px}
+h1.xl{font-size:108px;line-height:1.08}
+h1 em{font-style:normal;background:#fcd34d;color:#171717;padding:0 .14em;border-radius:14px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.body{text-wrap:pretty;font-size:42px;line-height:1.42;color:#e5e5e5;max-width:860px}
+ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:22px;max-width:888px}
+li{font-size:44px;display:flex;gap:28px;align-items:center;background:#181616;border:2px solid #404040;border-radius:28px;padding:30px 36px;box-shadow:0 8px 0 #000}
+li span{font-family:'Geist Mono';font-size:34px;color:#fcd34d}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:24px}.vs div{border:2px solid #404040;border-radius:30px;padding:40px;font-size:40px;line-height:1.35;color:#d4d4d4;background:#181616}
+.vs b{display:block;font-family:'Geist Mono';font-size:32px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;color:#f87171}
+.vs .aft{border-color:#fcd34d;background:#211d0f;color:#fff}.vs .aft b{color:#fcd34d}
+.chat{display:flex;flex-direction:column;gap:22px;max-width:888px}
+.chat div{font-size:38px;line-height:1.38;padding:30px 36px;border-radius:30px;border:2px solid #404040}
+.chat b{display:block;font-family:'Geist Mono';font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:#a3a3a3;margin-bottom:8px}
+.chat .me{background:#262626;align-self:flex-end;border-bottom-right-radius:8px;font-family:'Geist Mono';font-size:38px}
+.chat .ai{background:#181616;border-color:#3b82f6;align-self:flex-start;border-bottom-left-radius:8px;color:#d4d4d4}.chat .ai b{color:#7cb4ff}
+.btn{align-self:flex-start;background:#171717;color:#fcd34d;font-weight:700;font-size:40px;padding:30px 50px;border-radius:999px;box-shadow:0 10px 0 #00000055}
+.swipe{font-family:Caveat;font-size:72px;color:#fcd34d;transform:rotate(-3deg);align-self:flex-start;margin-top:20px}
+.cover .content{justify-content:center}
+.cta{background-color:#fcd34d;color:#171717;background-image:linear-gradient(#0000000d 1px,transparent 1px),linear-gradient(90deg,#0000000d 1px,transparent 1px)}
+.cta::after{border-color:#17171740}.cta .top,.cta .pg{color:#171717}.cta .mark{background:#171717;color:#fcd34d}.cta .kick{color:#78350f}.cta .body{color:#3f3f3f}
+.cta h1 em{background:#171717;color:#fcd34d}.cta .ghost{color:#171717;opacity:.07}.cta .bar{background:#17171720}.cta .bar i{background:#171717}
+.bar{position:absolute;left:96px;right:96px;bottom:76px;height:10px;border-radius:10px;background:#ffffff1c;z-index:2}.bar i{display:block;height:100%;border-radius:10px;background:#fcd34d}
+</style></head><body><section class="slide cover"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">01/07</span></div>
+<div class="content"><div class="kick">THE AI TRAP</div><h1 class="xl">Stop using <em>ChatGPT</em> like a search bar.</h1><p class="body">Asking ‘What is X?’ teaches you nothing. It builds zero skills and leaves your GitHub looking completely empty to recruiters.</p><div class="swipe">swipe →</div></div>
+<div class="bar"><i style="width:14.3%"></i></div></section><section class="slide prompt"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">02/07</span></div>
+<div class="content"><div class="tip">tip 01/05</div><div class="kick">PROMPT UPGRADE</div><h1>Give AI a job <em>title</em>.</h1><div class="chat"><div class="me"><b>you</b>Act as my technical co-founder. Let’s scope a project together.</div><div class="ai"><b>ai</b>Understood. What system are we building today?</div></div></div>
+<div class="bar"><i style="width:28.6%"></i></div></section><section class="slide contrast"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">03/07</span></div>
+<div class="content"><div class="tip">tip 02/05</div><div class="kick">ARCHITECTURE</div><h1><em>Brainstorm</em> the hard stuff.</h1><div class="vs"><div><b>Before</b><p>Copying basic online tutorials line-by-line without understanding</p></div><div class="aft"><b>After</b><p>Breaking down monolithic app ideas into scalable microservices</p></div></div></div>
+<div class="bar"><i style="width:42.9%"></i></div></section><section class="slide list"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">04/07</span></div>
+<div class="content"><div class="tip">tip 03/05</div><div class="kick">CODE REVIEW</div><h1>Demand strict <em>feedback</em>.</h1><ul><li><span>01</span>Paste your broken code</li><li><span>02</span>Request harsh senior reviews</li><li><span>03</span>Fix bugs yourself</li></ul></div>
+<div class="bar"><i style="width:57.1%"></i></div></section><section class="slide prompt"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">05/07</span></div>
+<div class="content"><div class="tip">tip 04/05</div><div class="kick">STRESS TEST</div><h1>Try to <em>break</em> your app.</h1><div class="chat"><div class="me"><b>you</b>Generate malicious inputs and edge cases for this service.</div><div class="ai"><b>ai</b>Here are 5 critical failure points in your current logic.</div></div></div>
+<div class="bar"><i style="width:71.4%"></i></div></section><section class="slide contrast"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">06/07</span></div>
+<div class="content"><div class="tip">tip 05/05</div><div class="kick">INTERVIEW PREP</div><h1>Get <em>grilled</em> on your code.</h1><div class="vs"><div><b>Before</b><p>Waiting for a recruiter to surprise you with hard questions</p></div><div class="aft"><b>After</b><p>Mock interviewing your own system design with AI first</p></div></div></div>
+<div class="bar"><i style="width:85.7%"></i></div></section><section class="slide cta"><div class="top"><span class="mark">ai/</span><span>@appliedailab</span><span class="pg">07/07</span></div>
+<div class="content"><div class="kick">NEXT STEPS</div><h1 class="xl">Build better <em>projects</em>.</h1><p class="body">Save this post, try one of these prompts today, and apply for Cohort 01 via the link in our bio to build your real portfolio.</p><div class="btn">Apply for Cohort 01 — link in bio →</div></div>
+<div class="bar"><i style="width:100.0%"></i></div></section></body></html>
